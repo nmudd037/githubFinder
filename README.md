@@ -1,3 +1,6 @@
+#Github Finder
+A ReactJS based web application built using [Github API](https://docs.github.com/en/rest) that lets you to search github users. Implemented React Context and Hooks API.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
