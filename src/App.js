@@ -1,11 +1,12 @@
 import './App.css';
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import AlertState from './components/context/alert/AlertState';
 import GithubState from './components/context/github/GithubState';
 import Alert from './components/layout/Alert';
+import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
@@ -17,9 +18,9 @@ const App = () => {
     <GithubState>
       <AlertState>
         <Router>
-          <Fragment>
+          <div className="app">
             <Navbar />
-            <div className="container">
+            <div className="app-content container">
               <Alert />
               <Switch>
                 <Route exact path="/" component={Home} />
@@ -28,7 +29,8 @@ const App = () => {
                 <Route component={NotFound} />
               </Switch>
             </div>
-          </Fragment>
+            <Footer />
+          </div>
         </Router>
       </AlertState>
     </GithubState>
