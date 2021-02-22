@@ -37,7 +37,7 @@ const Search = () => {
         <input type="submit" value="Search" className="btn btn-dark btn-block" />
       </form>
       {users.length > 0 && (
-        <button className="btn btn-light btn-block" onClick={clearUsers}>
+        <button className="btn btn-light btn-block" onClick={() => clearUsers(githubDispatch)}>
           Clear
         </button>
       )}
