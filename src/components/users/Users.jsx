@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
-
-import GithubContext from '../context/github/GithubContext';
+import { useGithub } from '../context/github/GithubState';
 import Spinner from '../layout/Spinner';
 import UserItem from './UserItem';
 
 const Users = () => {
-  const { loading, users } = useContext(GithubContext);
+  // we just need the github state without dispatch.
+  const githubState = useGithub()[0];
+  const { loading, users } = githubState;
 
   if (loading) {
     return <Spinner />;

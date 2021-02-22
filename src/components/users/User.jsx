@@ -1,17 +1,17 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import GithubContext from '../context/github/GithubContext';
+import { getUser, getUserRepos, useGithub } from '../context/github/GithubState';
 import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos';
 
 const User = ({ match }) => {
-  const { user, getUser, repos, getUserRepos, loading } = useContext(GithubContext);
+  const [githubState, githubDispatch] = useGithub();
+  const { user, repos, loading } = githubState;
   useEffect(() => {
-    getUser(match.params.login);
-    getUserRepos(match.params.login);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    getUser(githubDispatch, match.params.login);
+    getUserRepos(githubDispatch, match.params.login);
+  }, [githubDispatch, match]);
 
   const {
     name,

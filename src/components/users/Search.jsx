@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 
 import AlertContext from '../context/alert/AlertContext';
-import GithubContext from '../context/github/GithubContext';
+import { clearUsers, searchUsers, useGithub } from '../context/github/GithubState';
 
 const Search = () => {
-  const { searchUsers, clearUsers, users } = useContext(GithubContext);
+  const [githubState, githubDispatch] = useGithub();
+  const { users } = githubState;
   const { setAlert } = useContext(AlertContext);
 
   const [text, setText] = useState('');
@@ -19,7 +20,7 @@ const Search = () => {
     if (text === '') {
       return setAlert('Please enter a name to search!', 'light');
     }
-    searchUsers(text);
+    searchUsers(githubDispatch, text);
     setText('');
   };
 

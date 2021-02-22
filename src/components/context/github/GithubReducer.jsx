@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { CLEAR_USERS, GET_REPOS, GET_USER, SEARCH_USERS, SET_LOADING } from '../types';
 
 export default (state, action) => {
