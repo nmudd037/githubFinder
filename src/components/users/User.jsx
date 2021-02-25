@@ -1,7 +1,7 @@
 import { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getUser, getUserRepos, useGithub } from '../context/github/GithubState';
+import { getUser, getUserRepos, useGithub } from '../../context/github/GithubState';
 import Spinner from '../layout/Spinner';
 import Repos from '../repos/Repos';
 

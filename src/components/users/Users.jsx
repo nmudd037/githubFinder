@@ -1,4 +1,4 @@
-import { useGithub } from '../context/github/GithubState';
+import { useGithub } from '../../context/github/GithubState';
 import Spinner from '../layout/Spinner';
 import UserItem from './UserItem';
 

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useContext, useState } from 'react';
 
-import AlertContext from '../context/alert/AlertContext';
-import { clearUsers, searchUsers, useGithub } from '../context/github/GithubState';
+import AlertContext from '../../context/alert/AlertContext';
+import { clearUsers, searchUsers, useGithub } from '../../context/github/GithubState';
 
 const Search = () => {
   const [githubState, githubDispatch] = useGithub();
